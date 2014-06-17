@@ -2,7 +2,6 @@
 import commands, os, MySQLdb, random
 def cmd(str):
 	return commands.getoutput(str)
-
 if cmd('whoami')== 'root': 
 	print "checking with root privilegies"
 	l=[]
@@ -24,7 +23,6 @@ if cmd('whoami')== 'root':
 		print "php installed"
 	else:
 		l.append(' php') #appending in list to install as list of packages at final
-
 		print "php not installed"
 	if os.access('/var/www/html/wordpress',os.F_OK):
 		if os.listdir('/var/www/html/wordpress'):
@@ -78,7 +76,7 @@ if cmd('whoami')== 'root':
 	print "Success.. Wordpress is ready to run"
 	print cmd('service httpd restart')
 	print cmd('service mysqld start')
-	print "launching mozilla..."
+	print "launching firefox..."
 	cmd("/usr/bin/firefox -new-window localhost:80/wordpress")
 else:
 	print "Need root access"	
